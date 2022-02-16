@@ -12,26 +12,26 @@ const db = mysql.createConnection({
 });
 
 exports.signin = async (req, res) => {
-    try{
-        const {email, password} = req.body;
-        if( !email || !password ){
+    try {
+        const { email, password } = req.body;
+        if (!email || !password) {
             return res.status(400).render('Signin', {
                 message: 'Please provide an email and password'
             })
         }
-        db.query('SELECT * FROM user email = ?', [email], async (err,results) => {
+        db.query('SELECT * FROM user email = ?', [email], async (err, results) => {
             console.log(results);
-            if( !results || (await bcrypt.compare(password, results[0].password))){
+            if (!results || (await bcrypt.compare(password, results[0].password))) {
                 res.status(401).render('Signin', {
                     message: 'Email or Password is incorrect.'
                 })
             }
         })
 
-    }catch(error){
+    } catch (error) {
         console.log(error);
     }
-    
+
 }
 
 exports.signup = (req, res) => {

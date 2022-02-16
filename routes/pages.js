@@ -5,9 +5,9 @@ const router = express.Router();
 router.get('/', (req, res) => {
     res.render('Homepage');
 });
- 
+
 router.get('/signin', (req, res) => {
-    res.render('Signin', {message: ''});
+    res.render('Signin', { message: '' });
 })
 
 router.get('/signup', (req, res) => {
