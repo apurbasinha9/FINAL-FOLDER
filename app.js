@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 const path = require("path");
 const ejs = require('ejs');
 const cookieparser = require('cookie-parser');
-const port = process.env.PORt || 5000
+const port = process.env.PORT || 5000
 
 dotenv.config({
     path: './.env'
