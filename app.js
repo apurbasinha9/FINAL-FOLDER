@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const path = require("path");
 const ejs = require('ejs');
 const cookieparser = require('cookie-parser');
+const port = process.env.PORt || 5000
 
 dotenv.config({
     path: './.env'
@@ -44,6 +45,6 @@ app.use('/auth', require('./routes/auth'));
 
 
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("server is running");
 })
