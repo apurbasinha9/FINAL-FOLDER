@@ -16,6 +16,7 @@ const db = mysql.createConnection({
     database: process.env.DATABASE
 });
 
+
 const app = express();
 
 const publicDirectory = path.join(__dirname, './public');

@@ -1,262 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  </head>
 
-<style>
-  input:hover {
-    border-color: blue;
-  }
-</style>
+  <style>
+    input:hover {
+      border-color: blue;
+    }
+  </style>
 
-<body style="background-color: #3c9d59; padding-bottom: 50px">
-  <nav class="navbar navbar-light justify-content-center" style="height: 150px; margin-bottom: -33px">
-    <span class="navbar-brand mb-0 h1">
-      <h1 style="font-size: 3.5vw">
-        <!-- <span style="color: white;font-size: larger;">WELCOME  TO</span> -->
-        <span style="color: #ffae00; font-size: larger">Food </span>
-        <span style="color: #01ff12; font-size: larger">Producers </span>
-        <span style="color: #00ccff; font-size: larger">Forum</span>
-      </h1>
-    </span>
-  </nav>
-  <h1 style="
-        text-align: center;
-        color: white;
-        font-size: 3.5vw;
-        margin-bottom: 30px;
-      ">
-    Sign up here!
-  </h1>
-  <div class="container col-md-12" style="
-        background-color: #ffffffe7;
-        width: 65%;
-        padding-bottom: 20px;
-        padding-top: 20px;
-        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.68);
-        border-radius: 5px;
-      ">
-
-
-    <div class="row">
-
-      <div class="col-md-12">
-        <form class="form-horizontal" action="/auth/signup" method="POST">
-          <div class="form-group col-md-12">
-            <input type="email" class="form-control" placeholder="Enter email" name="email" required />
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group col-md-12">
-                <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Enter first name..."
-                  name="firstN" required />
-              </div>
+  <body style="background-color: #b418e4; padding-bottom: 50px">
+    <nav class="navbar navbar-light justify-content-center" style="height: 150px; margin-bottom: -33px">
+      <span class="navbar-brand mb-0 h1">
+        <a href="/" style="text-decoration: none;">
+          <h1 class="text" style="font-size: 4vw;">
+            <span style="color: #F6A023;font-size: larger;">Food </span>
+            <span style="color: #1DE329;font-size: larger;">Producers </span>
+            <span style="color: #00ccff;font-size: larger;">Forum</span>
+          </h1>
+        </a>
+      </span>
+    </nav>
+    <h1 style="
+                text-align: center;
+                color: white;
+                font-size: 3.5vw;
+                margin-bottom: 30px;
+            ">
+      Sign up here!
+    </h1>
+    <div class="container col-md-12" style="
+                background-color: #ffffffe7;
+                width: 65%;
+                padding-bottom: 20px;
+                padding-top: 20px;
+                box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.68);
+                border-radius: 5px;
+            ">
+      <div class="row">
+        <div class="col-md-12">
+          <form class="form-horizontal" action="/auth/signup" method="POST">
+            <div class="form-group col-md-12">
+              <input type="email" class="form-control" placeholder="Enter email" name="email" required />
             </div>
-            <div class="col-md-6">
-              <div class="form-group col-md-12">
-                <input type="text" class="form-control" id="exampleInputLastName" placeholder="Enter last name..."
-                  name="LastN" required />
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group col-md-12">
-                <input type="password" class="form-control" placeholder="password" name="password" required />
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group col-md-12">
-                <input type="password" class="form-control" placeholder="verify password" name="verifyPassword"
-                  required />
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-9">
-              <div class="form-group col-md-12">
-                <input type="text" class="form-control" placeholder="address" required />
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="form-group col-md-12">
-                <input type="text" class="form-control" placeholder="postal code" required />
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group col-md-12">
-                <input type="text" class="form-control" placeholder="cell phone" required />
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group col-md-12">
-                <input type="text" class="form-control" placeholder="telephone (optional)" />
-              </div>
-            </div>
-          </div>
-
-          <div class="row" style="margin-left: 0px; margin-bottom: 10px">
-            <div class="col-md-4">
-              <label>MY AGE IS:</label>
-            </div>
-
-            <div class="col-md-8">
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"
-                  required />
-                <label class="form-check-label" for="inlineRadio1">under 20</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"
-                  required />
-                <label class="form-check-label" for="inlineRadio2">20-29</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"
-                  required />
-                <label class="form-check-label" for="inlineRadio3">30-39</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option3"
-                  required />
-                <label class="form-check-label" for="inlineRadio3">40-59</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option3"
-                  required />
-                <label class="form-check-label" for="inlineRadio3">60 or older</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group col-md-12">
-            <input type="text" class="form-control" placeholder="FOODS I GROW OR GATHER" />
-          </div>
-          <div class="form-group col-md-12">
-            <input type="text" class="form-control" placeholder="I WANT TO LEARN MORE ABOUT" />
-          </div>
-          <div class="form-group col-md-12">
-            <input type="text" class="form-control" placeholder="SKILLS I CAN SHARE" />
-          </div>
-
-          <label style="margin-left: 15px">WHO ELSE SHOULD BE A MEMBER</label>
-          <div class="row">
-            <div class="col-md-5">
-              <div class="form-group col-md">
-                <input type="text" class="form-control" placeholder="name..." required />
-              </div>
-            </div>
-            <div class="col-md-7">
-              <div class="form-group col-md">
-                <input type="text" class="form-control" placeholder="email" />
-              </div>
-            </div>
-          </div>
-
-          <div class="row" style="margin-left: 0px; margin-bottom: 10px">
-            <div class="col-md-4">
-              <label>I HEARD ABOUT THIS FROM:</label>
-            </div>
-            <div class="col-md-8">
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio1" value="option1"
-                  required />
-                <label class="form-check-label" for="inlineRadio1">Friends</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio2" value="option2"
-                  required />
-                <label class="form-check-label" for="inlineRadio2">Social Media</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio3" value="option3"
-                  required />
-                <label class="form-check-label" for="inlineRadio3">email</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio4" value="option3"
-                  required />
-                <label class="form-check-label" for="inlineRadio3">Radio</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio4" value="option3"
-                  required />
-                <label class="form-check-label" for="inlineRadio3">TV</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-12" style="margin-left: 15px">
-              <div class="form-check form-check-inline">
-                <label class="form-check-label" for="inlineRadio1">Would you like to receive our email newsletters? [no
-                  spam!]</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"
-                  required />
-                <label class="form-check-label" for="inlineRadio1">yes</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"
-                  required />
-                <label class="form-check-label" for="inlineRadio2">no</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="row" style="margin-left: 15px; margin-top: 5px">
-            <p>
-              Membership is free. A donation of any size will help us provide
-              valuable information services for food producers.
-            </p>
-          </div>
-
-          <button type="submit" class="btn btn-success btn-block" style="margin-bottom: 10px; margin-top: 10px">
-            Donate
-          </button>
-          <button type="submit" class="btn btn-primary btn-block">
-            Submit Sign-up Form
-          </button>
-        </form>
-
-        <% if(message !='' ){ %>
-          <% if(message==='user registered' ){ %>
-            <div class="alert alert-success">
-              <%= message %>
-            </div>
-            <% } %>
-              <% if(message !=='user registered' ){ %>
-                <div class="alert alert-danger">
-                  <%= message %>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group col-md-12">
+                  <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Enter first name..."
+                      name="firstN" required />
                 </div>
-                <% } %>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group col-md-12">
+                  <input type="text" class="form-control" id="exampleInputLastName" placeholder="Enter last name..."
+                      name="lastN" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group col-md-12">
+                  <input type="password" class="form-control" placeholder="password" name="password" required />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group col-md-12">
+                  <input type="password" class="form-control" placeholder="verify password" name="verifyPassword"
+                      required />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-9">
+                <div class="form-group col-md-12">
+                  <input type="text" class="form-control" placeholder="address" required />
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group col-md-12">
+                  <input type="text" class="form-control" placeholder="postal code" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group col-md-12">
+                  <input type="text" class="form-control" placeholder="cell phone" required />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group col-md-12">
+                  <input type="text" class="form-control" placeholder="telephone (optional)" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row" style="margin-left: 0px; margin-bottom: 10px">
+              <div class="col-md-4">
+                <label>MY AGE IS:</label>
+              </div>
+
+              <div class="col-md-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                      value="option1" required />
+                  <label class="form-check-label" for="inlineRadio1">under 20</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                      value="option2" required />
+                  <label class="form-check-label" for="inlineRadio2">20-29</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                      value="option3" required />
+                  <label class="form-check-label" for="inlineRadio3">30-39</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4"
+                      value="option3" required />
+                  <label class="form-check-label" for="inlineRadio3">40-59</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4"
+                      value="option3" required />
+                  <label class="form-check-label" for="inlineRadio3">60 or older</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-md-12">
+              <input type="text" class="form-control" placeholder="FOODS I GROW OR GATHER" />
+            </div>
+            <div class="form-group col-md-12">
+              <input type="text" class="form-control" placeholder="I WANT TO LEARN MORE ABOUT" />
+            </div>
+            <div class="form-group col-md-12">
+              <input type="text" class="form-control" placeholder="SKILLS I CAN SHARE" />
+            </div>
+
+            <label style="margin-left: 15px">WHO ELSE SHOULD BE A MEMBER</label>
+            <div class="row">
+              <div class="col-md-5">
+                <div class="form-group col-md">
+                  <input type="text" class="form-control" placeholder="name..." required />
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="form-group col-md">
+                  <input type="text" class="form-control" placeholder="email" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row" style="margin-left: 0px; margin-bottom: 10px">
+              <div class="col-md-4">
+                <label>I HEARD ABOUT THIS FROM:</label>
+              </div>
+              <div class="col-md-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio1"
+                      value="option1" required />
+                  <label class="form-check-label" for="inlineRadio1">Friends</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio2"
+                      value="option2" required />
+                  <label class="form-check-label" for="inlineRadio2">Social Media</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio3"
+                      value="option3" required />
+                  <label class="form-check-label" for="inlineRadio3">email</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio4"
+                      value="option3" required />
+                  <label class="form-check-label" for="inlineRadio3">Radio</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio4"
+                      value="option3" required />
+                  <label class="form-check-label" for="inlineRadio3">TV</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-12" style="margin-left: 15px">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label" for="inlineRadio1">Would you like to receive our
+                    email
+                    newsletters? [no spam!]</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                      value="option1" required />
+                  <label class="form-check-label" for="inlineRadio1">yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                      value="option2" required />
+                  <label class="form-check-label" for="inlineRadio2">no</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" style="margin-left: 15px; margin-top: 5px">
+              <p>
+                Membership is free. A donation of any size will
+                help us provide valuable information services
+                for food producers.
+              </p>
+            </div>
+
+            <button type="submit" class="btn btn-success btn-block" style="margin-bottom: 10px; margin-top: 10px">
+              Donate
+            </button>
+            <button type="submit" class="btn btn-primary btn-block">
+              Submit Sign-up Form
+            </button>
+          </form>
+
+          <% if(message !='' ){ %>
+            <% if(message==='user registered' ){ %>
+              <div class="alert alert-success">
+                <%= message %>
+              </div>
+              <% } %>
+                <% if(message !=='user registered' ){ %>
+                  <div class="alert alert-danger">
+                    <%= message %>
+                  </div>
                   <% } %>
+                    <% } %>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+  </body>
 
 </html>

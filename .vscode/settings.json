@@ -1,0 +1,14 @@
+{
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "html.format.indentHandlebars": true,
+    "html.format.indentInnerHtml": true,
+    "html.format.wrapAttributesIndentSize": 4,
+    "[css]": {
+        "editor.defaultFormatter": "aeschli.vscode-css-formatter"
+    }
+}

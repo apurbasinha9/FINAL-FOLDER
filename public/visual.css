@@ -1,0 +1,226 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+
+
+body {
+    background-image: url('/images/image.jpeg');
+    background-size: cover;
+    /* background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/image.jpeg'); */
+}
+
+
+/* h1 {
+
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+} */
+
+h2 {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #224F15;
+}
+
+
+.container {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 80%;
+    margin-top: 26px;
+    margin-left: 5%;
+    border: 1px solid greenyellow;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+}
+
+.card {
+    width: 160px;
+    height: 190px;
+    margin: 10px;
+    background-color: rgba(43, 120, 21, 0.5);
+    border-radius: 5px;
+}
+
+
+/* .top h1{
+    background: rgba(0,0,0, 0.5);
+
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 5px;
+    border: 1px solid red;
+    margin-bottom: 20px;
+} */
+
+/* .top {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.top .btn {
+    color: white;
+
+    font-size: 20px;
+    margin: 5px;
+} */
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.4s;
+}
+
+.card p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.card-image {
+    height: 180px;
+    background-size: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.legal {
+    float: right;
+}
+
+@media(max-width:768px) {
+    .container {
+        width: 100%;
+        background: none;
+        border: none;
+    }
+
+    .card-image {
+        height: 500px;
+    }
+
+    .card {
+        width: 100%;
+        height: 300px;
+    }
+
+    .card p {
+        font-size: 25px;
+
+    }
+
+    .legal {
+        align-items: baseline;
+    }
+
+    .top h1 {
+        width: 95%;
+        font-size: 20px;
+        margin: 0;
+    }
+}
+
+@media(max-width:300px) {
+    .top h1 {
+        /* background: none; */
+        width: 90%;
+        font-size: 15px;
+        margin: 0;
+    }
+
+    .legal button {
+        /* width: 80%; */
+        float: right;
+        height: 70%;
+        font-size: 10px;
+    }
+}
+
+.image1 {
+    background-image: url('/images/veg.jpeg');
+}
+
+.image2 {
+    background-image: url('/images/fruits.jpeg');
+}
+
+.image3 {
+    background-image: url('/images/mushrooms.jpeg');
+}
+
+.image4 {
+    background-image: url('/images/livestock.jpg');
+}
+
+.image5 {
+    background-image: url('/images/pests.jpeg');
+}
+
+.image6 {
+    background-image: url('/images/soil.jpeg');
+}
+
+.image7 {
+    background-image: url('/images/marketing.jpg');
+}
+
+.image8 {
+    background-image: url('/images/tools.webp');
+}
+
+.image9 {
+    background-image: url('/images/fishing.jpeg');
+}
+
+.image10 {
+    background-image: url('/images/hunting.jpeg');
+}
+
+.image11 {
+    background-image: url('/images/foraging.jpeg');
+}
+
+.image12 {
+    background-image: url('/images/irrigation.jpeg');
+}
+
+.image13 {
+    background-image: url('/images/greenhouse.JPG');
+}
+
+.image14 {
+    background-image: url('/images/hydroponics.png');
+}
+
+.image15 {
+    background-image: url('/images/circle.jpg');
+}
+
+.image16 {
+    background-image: url('/images/transport.jpeg');
+}
+
+.image17 {
+    background-image: url('/images/general.jpg');
+}
+
+.image18 {
+    background-image: url('/images/admin.png');
+}
+
+.container a p {
+    color: black;
+}
+
+.container a:hover {
+    text-decoration: none;
+}

@@ -1,88 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  </head>
 
-<style>
-  input:hover {
-    border-color: blue;
-  }
-</style>
+  <style>
+    input:hover {
+      border-color: blue;
+    }
+  </style>
 
-<body style="background-color: #e64816">
-  <h1 style="
-        text-align: center;
-        color: white;
-        font-size: 70px;
-        margin-top: 40px;
-      ">
-    Sign in!
-  </h1>
-  <div class="container" style="
-        background-color: lavender;
-        margin-top: 5%;
-        width: 50%;
-        padding-bottom: 20px;
-        padding-top: 20px;
-        border-radius: 4px;
-        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.68);
-      ">
-    <form action="/auth/signin" method="POST">
-      <div class="form-group col-md-12">
-        <label for="email">Email address</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" />
-      </div>
-      <div class="form-group col-md-12">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Password" name="password" />
-      </div>
-      <div class="form-group form-check col-md-12" style="margin-left: 15px">
-        <label class="form-check-label" for="exampleCheck1" style="font-weight: normal">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          By signing in, you agree to respect basic online standards for
-          participation: we encourage lively discussion and disagreement but
-          no hate speech or disrespectful language addressed to people or
-          their ideas will be allowed; no marketing or sale of any item or
-          service; inclusive and appropriate language will be used, since
-          people of all ages, backgrounds and skill levels are participating.
-          We reserve the right to remove or edit any post if in our judgement
-          it is not accurate or helpful to the discussion in progress.</label>
-      </div>
-      <button type="submit" class="btn btn-primary col-md-12">Sign in</button>
-      <button class="btn btn-primary col-md-12" style="margin-top: 5px">
-        Go Back
-      </button>
-    </form>
-    <% if(message !='' ){ %>
-      <% if(message==='user registered' ){ %>
-        <div class="alert alert-success">
-          <%= message %>
+  <body style="background-color: #e64816">
+    <h1 style="
+                text-align: center;
+                color: white;
+                font-size: 70px;
+                margin-top: 40px;
+            ">
+      Sign in!
+    </h1>
+    <div class="container" style="
+                background-color: lavender;
+                margin-top: 5%;
+                width: 50%;
+                padding-bottom: 20px;
+                padding-top: 20px;
+                border-radius: 4px;
+                box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.68);
+                      ">
+      <form action="/auth/signin" method="POST">
+        <div class="form-group col-md-12">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" />
         </div>
-        <% } %>
-          <% if(message !=='user registered' ){ %>
-            <div class="alert alert-danger">
-              <%= message %>
-            </div>
-            <% } %>
+        <div class="form-group col-md-12">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password" name="password" />
+        </div>
+        <div class="form-group form-check col-md-12" style="margin-left: 15px">
+          <label class="form-check-label" for="exampleCheck1" style="font-weight: normal">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" required />
+            By signing in, you agree to respect basic online
+            standards for participation: we encourage lively
+            discussion and disagreement but no hate speech or
+            disrespectful language addressed to people or their
+            ideas will be allowed; no marketing or sale of any item
+            or service; inclusive and appropriate language will be
+            used, since people of all ages, backgrounds and skill
+            levels are participating. We reserve the right to remove
+            or edit any post if in our judgement it is not accurate
+            or helpful to the discussion in progress.</label>
+        </div>
+        <button type="submit" class="btn btn-primary col-md-12">
+          Sign in
+        </button>
+        <a href="/" class="btn btn-primary col-md-12" style="margin-top: 5px">
+          Go Back
+        </a>
+      </form>
+      <% if(message !='' ){ %>
+        <% if(message==='user registered' ){ %>
+          <div class="alert alert-success">
+            <%= message %>
+          </div>
+          <% } %>
+            <% if(message !=='user registered' ){ %>
+              <div class="alert alert-danger">
+                <%= message %>
+              </div>
               <% } %>
-  </div>
+                <% } %>
+    </div>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+  </body>
 
 </html>

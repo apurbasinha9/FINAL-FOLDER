@@ -2,7 +2,7 @@
 const mysql = require('mysql');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const express = require('express');
+const { promisify } = require('util');
 
 const db = mysql.createConnection({
     host: process.env.DATABASE_HOST,
@@ -19,12 +19,33 @@ exports.signin = async (req, res) => {
                 message: 'Please provide an email and password'
             })
         }
-        db.query('SELECT * FROM user email = ?', [email], async (err, results) => {
+        db.query('SELECT * FROM user WHERE email = ?', [email], async (err, results) => {
             console.log(results);
+            if (err) {
+                console.log(err);
+            }
             if (!results || (await bcrypt.compare(password, results[0].password))) {
                 res.status(401).render('Signin', {
                     message: 'Email or Password is incorrect.'
                 })
+            } else {
+                const id = results[0].id;
+
+                console.log(process.env.JWT_EXPIRES_IN)
+                console.log("print stuff")
+                const token = jwt.sign({ id }, process.env.JWT_SECRET, {
+                    expiresIn: process.env.JWT_EXPIRES_IN
+                });
+                console.log("the token is: " + token);
+
+                const cookieOptions = {
+                    expires: new Date(
+                        Date.now() + parseInt(process.env.JWT_COOKIE_EXPIRES) * 24 * 60 * 60 * 100
+                    ),
+                    httpOnly: true
+                }
+                res.cookie('jwt', token, cookieOptions);
+                res.redirect("/foodproducersforum")
             }
         })
 
@@ -39,7 +60,9 @@ exports.signup = (req, res) => {
 
     const { firstN, lastN, email, password, verifyPassword } = req.body
 
+
     db.query('SELECT email FROM user WHERE email = ?', [email], async (err, results) => {
+
         if (err) {
             console.log(err);
         } else if (results.length > 0) {
@@ -55,10 +78,7 @@ exports.signup = (req, res) => {
             if (err) {
                 console.log(err);
             } else {
-                console.log(results);
-                return res.render('Signup', {
-                    message: 'user registered'
-                });
+                res.redirect('/foodproducersforum')
             }
         });
 
@@ -66,4 +86,40 @@ exports.signup = (req, res) => {
     });
 
 
+}
+
+exports.isLoggedIn = async (req, res, next) => {
+
+    if (req.cookies.jwt) {
+        try {
+            const decoded = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRET);
+            console.log(decoded);
+
+            db.query('SELECT * FROM user WHERE id = ?', [decoded.id], (err, results) => {
+                console.log(results);
+
+                if (!results) {
+                    return next();
+                }
+
+                req.user = results[0];
+                return next();
+            });
+        } catch (err) {
+            console.log(err);
+            return next();
+        }
+    } else {
+        next();
+    }
+
+}
+
+exports.signout = async (req, res) => {
+    res.cookie('jwt', 'signout', {
+        expires: new Date(Date.now() + 2 * 1000),
+        httpOnly: true
+    });
+
+    res.status(200).redirect('/');
 }
