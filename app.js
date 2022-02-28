@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 const path = require("path");
 const ejs = require('ejs');
 const cookieparser = require('cookie-parser');
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 3000
 
 dotenv.config({
     path: './.env'
@@ -16,6 +16,13 @@ const db = mysql.createConnection({
     password: process.env.DATABASE_PASSWORD,
     database: process.env.DATABASE
 });
+
+db.query('SELECT * FROM user WHERE id = "24"', (err, rows) => {
+    if (err) throw err;
+    else {
+        console.log(rows);
+    }
+})
 
 
 const app = express();
