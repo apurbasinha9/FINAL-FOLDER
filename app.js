@@ -10,19 +10,13 @@ dotenv.config({
     path: './.env'
 })
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
     host: process.env.DATABASE_HOST,
     user: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD,
     database: process.env.DATABASE
 });
 
-db.query('SELECT * FROM user WHERE id = "24"', (err, rows) => {
-    if (err) throw err;
-    else {
-        console.log(rows);
-    }
-})
 
 
 const app = express();
@@ -38,13 +32,13 @@ app.use(cookieparser());
 
 app.set('view engine', "ejs");
 
-db.connect((err) => {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log("DATABASE CONNECTED");
-    }
-})
+// db.connect((err) => {
+//     if (err) {
+//         console.log(err);
+//     } else {
+//         console.log("DATABASE CONNECTED");
+//     }
+// })
 
 
 app.use('/', require('./routes/pages'));
