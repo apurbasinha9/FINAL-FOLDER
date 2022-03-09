@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <form action="/auth/forumposts" method="post">
+            <div class="card shadow-sm rounded">
+                <div class="card-body">
+                    <h4 class="card-title">Add Post</h4>
+                    <div class="form-group">
+                        <!-- <input type="text" name="title" placeholder="title"> -->
+                        <textarea class="form-control" placeholder="Write here..." id="exampleFormControlTextarea1"
+                            rows="3" name="description"></textarea>
+
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+            </div>
+        </form>
+
+
+        <div class="row ">
+            <% for(let i=0; i < forumpost.length; i++){ %>
+
+                <div class="col-md-2">
+
+                    <div class="card shadow">
+                        <span>
+
+                            <img class="card-img-top" src="/test.jpeg" alt="Card image cap">
+                            <div class="card-body">
+
+                                <p class="card-text">
+                                    post: <%= forumpost[i].description %>
+                                </p>
+
+                            </div>
+                        </span>
+
+                    </div>
+
+                </div>
+                <% } %>
+        </div>
+    </body>
+
+</html>

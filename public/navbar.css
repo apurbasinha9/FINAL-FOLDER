@@ -1,5 +1,5 @@
 .top {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .top .btn {
@@ -15,4 +15,41 @@
     color: white;
     text-transform: uppercase;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+@media(max-width:768px) {
+
+
+
+    .thirdCol {
+
+        flex-direction: column;
+    }
+
+
+    .top h1 {
+        width: 95%;
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .secondCol .text {
+        margin-left: 9px;
+    }
+
+    .firstCol {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .top> :nth-child(1) {
+        order: 2;
+    }
+
+    .top> :nth-child(3) {
+        order: 3;
+    }
 }

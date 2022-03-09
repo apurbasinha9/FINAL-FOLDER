@@ -3,305 +3,55 @@
     <body>
         <%- include('partials/navbar')%>
 
-            <div class="text mt-3">
+            <div class="text text-center mt-3">
                 <h2>A place to share knowledge and solutions for farmers, gardeners, foragers, hunters and fishers</h2>
             </div>
 
-            <!-- <div class="top">
-            <div class="row">
-                <div class="col-3">
-                    <button class="btn" style="color: white;background-color: #F6A023;font-size: 20px;margin: 5px;"
-                        data-toggle="modal" data-target="#disclaimermodal">Legal
-                        disclaimer
-                    </button>
-                </div>
-                <div class="col-6">
-                    <h1 class="text">
-                        <span style="color: #F6A023;font-size: larger;">Food </span>
-                        <span style="color: #1DE329;font-size: larger;">Producers </span>
-                        <span style="color: #00ccff;font-size: larger;">Forum</span>
-                    </h1>
-                </div>
-                <div class="col-3">
-                    <div class="legal">
+            <div class="container mt-3 p-3 mb-3" style="background: rgba(0, 0, 0, 0.3);">
+                <div class="row">
+                    <% for(let i=0; i < categories.length; i++){ %>
 
-                        <div class="dropdown" style="background-color: #F6A023;margin: 5px;border-radius: 5px;">
-                            <button class="btn btn-secondary" type="button" id="dropdownMenuButton"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                style="background: none;border: none;padding: 0;margin: 5px;">
-                                <img style="width: 60px;height: 60px;" class="rounded-circle" src="/images/user.png"
-                                    alt="">
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="/profile">Your Profile</a>
-                                <a class="dropdown-item" href="/auth/signout">Sign Out</a>
+                        <div class="col-md-2 mb-3 mt-3">
+
+                            <div class="card shadow-lg catCard">
+                                <a href=<%="/categories/" + categories[i].id %>
+                                    <span>
+
+                                        <img class="card-img-top img-fluid" src="<%= categories[i].image %>"
+                                            alt="Card image cap">
+                                        <div class="card-body px-0 py-3 text-center font-weight-bold">
+
+                                            <p class="card-text">
+                                                <%= categories[i].name %>
+                                            </p>
+
+
+                                        </div>
+                                    </span>
+                                </a>
                             </div>
+
                         </div>
-                    </div>
+
+                        <% } %>
                 </div>
             </div>
 
-            <h2>A place to share knowledge and solutions for farmers, gardeners, foragers, hunters and fishers</h2>
-        </div> -->
-
-
-            <div class="container mb-4">
-
-                <!-- <div class="row text-center mt-3">
-                <div class="col col-md">
-                    <div class="card">
-                        <img class="card-img-top" src="./images/soil.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Admin</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-md">
-                    <div class="card">
-                        <img class="card-img-top" src="./images/soil.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Fishing</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-md">
-                    <div class="card">
-                        <img class="card-img-top" src="./images/soil.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Foraging</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-md">
-                    <div class="card">
-                        <img class="card-img-top" src="./images/soil.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Fruits</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-md">
-                    <div class="card">
-                        <img class="card-img-top" src="./images/soil.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Greenhouse</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-md">
-                    <div class="card">
-                        <img class="card-img-top" src="./images/soil.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Hunting</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row text-center mt-3">
-                <div class="col col-md">
-                    <div class="card">
-                        <img class="card-img-top" src="./images/soil.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Hydrophonics</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-md">
-                    <div class="card">
-                        <img class="card-img-top" src="./images/soil.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Irrigation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-md">
-                    <div class="card">
-                        <img class="card-img-top" src="./images/soil.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Livestock</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-md">
-                    <div class="card">
-                        <img class="card-img-top" src="./images/soil.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Marketing</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-md">
-                    <div class="card">
-                        <img class="card-img-top" src="./images/soil.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Mushrooms</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-md">
-                    <div class="card">
-                        <img class="card-img-top" src="/images/soil.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Pests & Diseases</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row text-center">
-                <div class="col col-md">
-                    <div class="card">
-                        <img class="card-img-top" src="./images/soil.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Permaculture</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-md">
-                    <div class="card">
-                        <img class="card-img-top" src="./images/soil.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Seeds</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-md">
-                    <div class="card">
-                        <img class="card-img-top" src="./images/soil.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Soil Fertility</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-md">
-                    <div class="card">
-                        <img class="card-img-top" src="./images/soil.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Storage & Transport</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-md">
-                    <div class="card">
-                        <img class="card-img-top" src="./images/soil.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Tools & Materials</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-md">
-                    <div class="card">
-                        <img class="card-img-top" src="./images/soil.jpeg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Vegetables</p>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+            <%- include('partials/footer')%>
 
 
 
 
-                <div class="card">
-                    <div class="card-image image18"></div>
-                    <p>Admin</p>
-                </div>
 
-                <div class="card">
-                    <div class="card-image image9"></div>
-                    <p>Fishing</p>
-                </div>
-                <div class="card">
-                    <div class="card-image image11"></div>
-                    <p>Foraging</p>
-                </div>
-                <div class="card">
-                    <div class="card-image image2"></div>
-                    <p>Fruit</p>
-                </div>
-                <div class="card">
-                    <div class="card-image image13"></div>
-                    <p>Greenhouse</p>
-                </div>
-                <div class="card">
-                    <div class="card-image image10"></div>
-                    <p>Hunting</p>
-                </div>
-                <div class="card">
-                    <div class="card-image image14"></div>
-                    <p>Hydroponics</p>
-                </div>
-                <div class="card">
-                    <div class="card-image image12"></div>
-                    <p>Irrigation</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-image image4"></div>
-                    <p>Livestock</p>
-                </div>
-
-
-                <div class="card">
-                    <div class="card-image image3"></div>
-                    <p>Mushrooms</p>
-                </div>
-                <div class="card">
-                    <div class="card-image image7"></div>
-                    <p>Marketing</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-image image5"></div>
-                    <p>Pests & Diseases</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-image image15"></div>
-                    <p>Permaculture</p>
-                </div>
-
-                <a href="/seeds">
-                    <div class="card">
-                        <div class="card-image image17"></div>
-                        <p>Seeds</p>
-                    </div>
-                </a>
-
-                <div class="card">
-                    <div class="card-image image6"></div>
-                    <p>Soil Fertility</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-image image16"></div>
-                    <p>Storage & Transport</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-image image8"></div>
-                    <p>Tools & Materials</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-image image1"></div>
-                    <p>Vegetables</p>
-                </div>
-
-            </div>
-
-
-
-            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-                crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-                crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-                crossorigin="anonymous"></script>
+                <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                    crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                    crossorigin="anonymous"></script>
     </body>
 
     </html>

@@ -1,4 +1,3 @@
-
 const mysql = require('mysql');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
@@ -24,15 +23,23 @@ exports.signin = async (req, res) => {
             if (err) {
                 console.log(err);
             }
-            if (!results || (await bcrypt.compare(password, results[0].password))) {
+            if (!results) {
+                res.status(401).render('Signin', {
+                    message: 'An error occured.'
+                })
+            } else if (results.length == 0) {
+                res.status(401).render('Signin', {
+                    message: 'User does not exist.'
+                })
+            }
+            else if (await !bcrypt.compare(password, results[0].password)) {
                 res.status(401).render('Signin', {
                     message: 'Email or Password is incorrect.'
                 })
             } else {
                 const id = results[0].id;
 
-                console.log(process.env.JWT_EXPIRES_IN)
-                console.log("print stuff")
+
                 const token = jwt.sign({ id }, process.env.JWT_SECRET, {
                     expiresIn: process.env.JWT_EXPIRES_IN
                 });
@@ -45,7 +52,7 @@ exports.signin = async (req, res) => {
                     httpOnly: true
                 }
                 res.cookie('jwt', token, cookieOptions);
-                res.redirect("/foodproducersforum")
+                res.redirect("/categories")
             }
         })
 
@@ -55,12 +62,12 @@ exports.signin = async (req, res) => {
 
 }
 
+
+
 exports.signup = (req, res) => {
     console.log(req.body);
 
     const { firstN, lastN, email, password, verifyPassword } = req.body
-
-
     db.query('SELECT email FROM user WHERE email = ?', [email], async (err, results) => {
 
         if (err) {
@@ -74,11 +81,25 @@ exports.signup = (req, res) => {
         let hashedPassword = await bcrypt.hash(password, 8);
         console.log(hashedPassword);
 
-        db.query('INSERT INTO user SET ?', { first_name: firstN, last_name: lastN, email: email, password: hashedPassword }, (err, results) => {
+        db.query('INSERT INTO user SET ?', { first_name: firstN, last_name: lastN, email: email, password: hashedPassword }, (err, result) => {
             if (err) {
                 console.log(err);
             } else {
-                res.redirect('/foodproducersforum')
+                const id = result.insertId;
+
+                const token = jwt.sign({ id }, process.env.JWT_SECRET, {
+                    expiresIn: process.env.JWT_EXPIRES_IN
+                });
+
+                const cookieOptions = {
+                    expires: new Date(
+                        Date.now() + parseInt(process.env.JWT_COOKIE_EXPIRES) * 24 * 60 * 60 * 100
+                    ),
+                    httpOnly: true
+                }
+                res.cookie('jwt', token, cookieOptions);
+
+                res.redirect('/categories')
             }
         });
 
