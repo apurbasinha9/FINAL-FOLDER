@@ -1,0 +1,20 @@
+body {
+    /* background-color: #F6F6F6; */
+
+    background-color: rebeccapurple;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 70px;
+    margin-top: 40px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input:hover {
+    border-color: dodgerblue;
+}

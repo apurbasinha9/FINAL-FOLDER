@@ -67,7 +67,7 @@ exports.signin = async (req, res) => {
 exports.signup = (req, res) => {
     console.log(req.body);
 
-    const { firstN, lastN, email, password, verifyPassword } = req.body
+    const { firstN, lastN, email, password, verifyPassword, img, phone, address } = req.body
     db.query('SELECT email FROM user WHERE email = ?', [email], async (err, results) => {
 
         if (err) {
@@ -81,7 +81,7 @@ exports.signup = (req, res) => {
         let hashedPassword = await bcrypt.hash(password, 8);
         console.log(hashedPassword);
 
-        db.query('INSERT INTO user SET ?', { first_name: firstN, last_name: lastN, email: email, password: hashedPassword }, (err, result) => {
+        db.query('INSERT INTO user SET ?', { first_name: firstN, last_name: lastN, email: email, password: hashedPassword, userImage: img, userPhone: phone, userAddress: address }, (err, result) => {
             if (err) {
                 console.log(err);
             } else {

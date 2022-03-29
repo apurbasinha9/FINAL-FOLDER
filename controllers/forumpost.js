@@ -12,16 +12,13 @@ const db = mysql.createConnection({
 
 exports.forumpost = (req, res) => {
 
-    const { description } = req.body;
-    db.query("SELECT description FROM forumposts WHERE forumposts = ?", [description], (err, result) => {
-        db.query('INSERT INTO forumposts SET ?', { description: description }, (err, results) => {
-
-            res.render('forumposts', {
-                forumposts: results
-            })
-
-        })
-
+    const { description, title } = req.body;
+    const category_id = req.params.id;
+    const user_id = req.user.id;
+    db.query('INSERT INTO forumposts SET ?', { title: title, description: description, category_id: category_id, user_id: user_id }, (err, result) => {
+        if (err) {
+            console.log(err);
+        }
     })
-
+    res.redirect('/categories/' + req.params.id)
 }

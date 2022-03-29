@@ -5,165 +5,240 @@
 
     <body>
 
+        <button type="button" class="btn btn-danger btn-floating btn-lg scrollUp" id="btn-back-to-top">
+            <i class="fa fa-arrow-up"></i>
+        </button>
 
         <%- include('partials/navbar')%>
 
 
-            <div class="container-fluid p-5 mt-2" style="background-color:lightsteelblue;">
+            <div class="container-fluid p-5 topContainer">
 
                 <div class="row">
+
                     <div class="col-md-3  p-3 my-auto">
-                        <div class="card shadow p-3 " style="background-color: #f2f897;">
+
+                        <div class="card shadow p-3 categoryCard">
 
                             <h1 class="text text-center card-header">
                                 <%= category.name %>
                             </h1>
                             <div class="card-body">
-                                <p class="lead card-text font-weight-bold text-center">
+                                <p class="lead card-text text-center">
                                     <%= category.description %>
                                 </p>
                             </div>
+
                         </div>
 
                     </div>
-                    <div class="col-md-6 p-3 my-auto">
-                        <img src="<%= category.image %>" class="image-fluid shadow rounded mx-auto d-block"
-                            style="width: 500px;height: 500px;" alt="Responsive image">
 
+                    <div class="col-md-6 p-3 my-auto">
+
+                        <img src="<%= category.image %>" class="img-fluid shadow rounded mx-auto d-block w-80 h-80"
+                            alt="Responsive image">
 
                     </div>
 
                     <div class="col-md-3 p-3 my-auto">
-                        <div class="card p-2 shadow bg-info">
+
+                        <div class="card p-2 shadow bg-primary">
+
                             <img class="card-img-top" src="<%= category.hostImage %>" alt="Card image cap">
                             <div class="card-body">
-                                <h2 class="card-text text-white " style="text-align: center;font-weight: bold;">
+                                <h2 class="card-text text-white text-center font-weight-bold">
                                     FORUM HOST
                                 </h2>
-                                <p class="card-text text-center text-white font-weight-bold">
-                                    <%=category.forumhost %>
+                                <p class="lead card-text text-center text-white">
+                                    <%= category.forumhost %>
                                 </p>
                             </div>
+
                         </div>
+
                     </div>
 
                 </div>
             </div>
 
 
+            <div class="container-fluid p-3 bg-secondary middleContainer">
+                <h1 class="text text-center text-white p-1">Write your topic and thoughts below
+                    <i class="fa fa-solid fa-arrow-down"></i>
+                </h1>
+            </div>
 
-            <div class="container mt-5">
+
+
+            <div class="container mt-5 secondContainer">
                 <div class="row p-0">
                     <div class="col-md-3 ">
-                        <div class="card shadow-sm" style="background-color: #E9ECEF;">
-                            <div class="card-body">
+                        <div class=" card shadow-sm">
+                            <div class="card-body links">
                                 <h2 class="card-title text-primary">Links</h2>
 
-
-                                <a href="https://www.seeds.ca"
-                                    style=" font-size: 1.8vw;font-weight: bolder;text-decoration: underline;color: red;">Seeds
-                                    of
-                                    Diversity</a>
+                                <a href="https://www.seeds.ca" class="linksA_tag1">
+                                    Seeds of Diversity</a>
                                 <p class="card-text">
-                                    Seeds of Diversity is Canada's heritage seed network. Their website lists more than
-                                    100 Canadian seed companies. Membership is free and gives you access to heritage
+                                    Membership is free and gives
+                                    you access to
                                     seeds being
                                     grown
-                                    by fellow Canadian gardeners and growers. Check it out!
+                                    by fellow Canadian gardeners and growers.
+                                </p>
+
+                                <a href="https://www.foodproducersforum.com/seeds" class="linksA_tag2 mt-3">
+                                    Our Seeds Page</a>
+                                <p class="card-text">
+                                    The SEEDS page on our website has a collection of interesting and useful posts about
+                                    seeds.
+                                </p>
+
+                                <a href="https://foodproducersforum.com/seeds/seed-starting/" class="linksA_tag3 mt-3">
+                                    Seed Starting Workshop</a>
+                                <p class="card-text">
+                                    In this online video, our mentor offers his experience and advice on how he starts
+                                    seeds each spring.
                                 </p>
 
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-9 ">
 
-                        <% for (let i=0; i < posts.length; i++) { %>
-                            <%=posts[i].first_name%><br>
-                                <%=posts[i].title%><br>
-                                    <%=posts[i].description%><br>
-                                        <%}%>
 
-                                            <form action="/category/<%= category.id %>" method="post">
-                                                <div class="card shadow-sm rounded" style="background-color: #E9ECEF;">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Add Post</h4>
-                                                        <div class="form-group">
-                                                            <input type="text" name="title" placeholder="title">
-                                                            <textarea class="form-control" placeholder="Write here..."
-                                                                id="exampleFormControlTextarea1" rows="3"
-                                                                name="description"></textarea>
-
-                                                        </div>
-
-                                                        <button class="btn btn-primary">Submit</button>
-                                                    </div>
-                                                    <div class="d-flex flex-column comment-section">
-                                                        <div class=" p-2" style="background-color: #E9ECEF;">
-                                                            <div class="d-flex flex-row user-info"><img
-                                                                    class="rounded-circle"
-                                                                    src="https://i.imgur.com/RpzrMR2.jpg" width="40">
-                                                                <div
-                                                                    class="d-flex flex-column justify-content-start ml-2">
-                                                                    <span class="d-block font-weight-bold name">Marry
-                                                                        Andrews</span><span
-                                                                        class="date text-black-50">Shared
-                                                                        publicly - Jan 2020</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="mt-2">
-
-                                                                <p class="comment-text">
-                                                                    <%= category.post %>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="" style="background-color: #E9ECEF;">
-                                                            <div class="d-flex flex-row fs-12">
-                                                                <div class="like p-2 cursor"><i
-                                                                        class="fa fa-thumbs-o-up"></i><span
-                                                                        class="ml-1">Like</span></div>
-                                                                <div class="like p-2 cursor"><i
-                                                                        class="fa fa-commenting-o"></i><span
-                                                                        class="ml-1">Comment</span></div>
-                                                                <div class="like p-2 cursor"><i
-                                                                        class="fa fa-share"></i><span
-                                                                        class="ml-1">Share</span></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class=" p-2" style="background-color: #E9ECEF;">
-                                                            <div class="d-flex flex-row align-items-start"><img
-                                                                    class="rounded-circle"
-                                                                    src="https://i.imgur.com/RpzrMR2.jpg"
-                                                                    width="40"><textarea
-                                                                    class="form-control ml-1 shadow-none textarea"></textarea>
-                                                            </div>
-                                                            <div class="mt-2 text-right"><button
-                                                                    class="btn btn-primary btn-sm shadow-none"
-                                                                    type="button">Post
-                                                                    comment</button><button
-                                                                    class="btn btn-outline-primary btn-sm ml-1 shadow-none"
-                                                                    type="button">Cancel</button></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
+                    <div class="col-md-9 postColumn">
 
 
 
+                        <form action="/categories/<%= category.id %>/forumpost" method="post">
+                            <div class="card shadow-sm rounded p-3">
 
+                                <div class="card-body">
+                                    <div class="row dropdown p-1 mb-2">
+                                        <button class="btn btn-success dropdown-toggle btn-block" type="button"
+                                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Select the topic of your post
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item" href="#">need to be added</a></li>
+                                            <li><a class="dropdown-item" href="#">need to be added</a></li>
+                                            <li><a class="dropdown-item" href="#">need to be added</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row d-flex justify-content-center">
+                                            <h4 class="card-title">Title</h4>
+                                            <textarea class="form-control mb-2"
+                                                placeholder="Write here (up to 12 characters)..."
+                                                id="exampleFormControlTextarea1" rows="1" name="title"></textarea>
+                                            <h4 class="card-title mt-2">Your Post</h4>
+                                            <textarea class="form-control" placeholder="Write here..."
+                                                id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
 
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="d-grid gap-2 col-8 mx-auto mb-3">
+                                    <button class="btn btn-primary p-2 postButton" type="submit">Post</button>
+                                </div>
+
+                            </div>
+                        </form>
+
+                        <div class="container-fluid border rounded bg-white mt-3 p-3 shadow-sm">
+
+                            <% for (let i=0; i < posts.length; i++) { %>
+                                <div class="shadow-sm rounded p-0 border m-3 d-flex flex-column comment-section">
+                                    <div class="">
+                                        <div class="d-flex flex-row user-info">
+                                            <div class="p-2 d-flex justify-content-start ml-2">
+
+                                                <img class="rounded-circle me-2 userImage"
+                                                    src="/images/<%= posts[i].userImage %>" width="50">
+
+                                            </div>
+                                            <h5 class="text p-2 mt-2 userName">
+                                                <%=posts[i].first_name%>
+                                                    <%=posts[i].last_name%>
+                                            </h5>
+                                        </div>
+                                        <div class=" m-2">
+                                            <span class="date text-black-50">
+                                                <h4>
+                                                    <%=posts[i].title%>
+                                                </h4>
+
+                                            </span>
+                                            <p class=" comment-text">
+                                                <%=posts[i].description%>
+                                            </p>
+                                        </div>
+                                        <div class="">
+                                            <div class="d-flex flex-row commentBox">
+                                                <button href="" class="btn p-1 ms-2"><i
+                                                        class="fa fa-thumbs-o-up"></i></button>
+                                                <button href="" class="btn p-1 ms-2"><i
+                                                        class="fa fa-commenting-o"></i></button>
+                                                <button href="" class="btn p-1 ms-2"><i class="fa fa-edit"></i></button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <%}%>
+                        </div>
                     </div>
 
 
 
+
+
+
+
+
                 </div>
+
+
+
+            </div>
 
 
 
             </div>
 
             <%- include('partials/footer')%>
+
+                <script>
+                    //Get the button
+                    let mybutton = document.getElementById("btn-back-to-top");
+
+                    // When the user scrolls down 20px from the top of the document, show the button
+                    window.onscroll = function () {
+                        scrollFunction();
+                    };
+
+                    function scrollFunction() {
+                        if (
+                            document.body.scrollTop > 20 ||
+                            document.documentElement.scrollTop > 20
+                        ) {
+                            mybutton.style.display = "block";
+                        } else {
+                            mybutton.style.display = "none";
+                        }
+                    }
+                    // When the user clicks on the button, scroll to the top of the document
+                    mybutton.addEventListener("click", backToTop);
+
+                    function backToTop() {
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop = 0;
+                    }
+                </script>
 
                 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
                     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

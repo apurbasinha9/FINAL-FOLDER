@@ -1,5 +1,7 @@
 const express = require('express');
 const authController = require('../controllers/auth');
+const postController = require('../controllers/forumpost');
+
 const middleware = authController.isLoggedIn;
 const mysql = require('mysql');
 
@@ -19,6 +21,9 @@ router.get('/', (req, res) => {
 router.get('/signin', (req, res) => {
     res.render('Signin', { message: '' });
 })
+
+router.post('/categories/:id/forumpost', middleware, postController.forumpost);
+
 
 router.get('/signup', (req, res) => {
     res.render('Signup', { message: '' });
@@ -46,7 +51,7 @@ router.get('/categories', middleware, (req, res) => {
 })
 
 router.get('/categories/:id', middleware, (req, res) => {
-    // console.log(req.params.id);
+
     if (req.user) {
         db.query('SELECT * FROM categories WHERE id = ?', [req.params.id], async (err, category_result) => {
             if (err) {
@@ -57,11 +62,12 @@ router.get('/categories/:id', middleware, (req, res) => {
             }
 
 
-            db.query(`SELECT forumposts.*, user.first_name, user.last_name 
+            db.query(`SELECT forumposts.*, user.first_name, user.last_name, user.userImage 
             FROM forumposts
             JOIN user
             ON forumposts.user_id = user.id
             WHERE category_id = ?`, [req.params.id], async (err, post_results) => {
+
                 if (err) {
                     console.log(err);
                 }
@@ -75,10 +81,11 @@ router.get('/categories/:id', middleware, (req, res) => {
                     category: category_result[0],
                     posts: post_results,
                 });
+
             })
 
 
-            console.log(results);
+            // console.log(results);
         })
 
     } else {

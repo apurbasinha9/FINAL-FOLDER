@@ -4,6 +4,12 @@
 
 .navbar {
     background-color: #662113;
+    background-size: cover !important;
+}
+
+.navImg {
+    width: 100%;
+    height: 100%;
 
 }
 
@@ -12,15 +18,16 @@
 }
 
 .para {
-    font-size: 1.4vw;
+    font-size: 1.7vw;
 }
 
 .rightheader {
     font-size: 2.5vw;
+    margin-top: 10px;
 }
 
 .cont-h1 {
-    font-size: 5vw;
+    font-size: 4vw;
 }
 
 @media(max-width:768px) {
@@ -38,5 +45,10 @@
 
     .rightheader {
         font-size: 5vw;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
     }
 }

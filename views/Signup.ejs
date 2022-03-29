@@ -6,21 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="signup.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
   </head>
 
-  <style>
-    input:hover {
-      border-color: blue;
-    }
-  </style>
 
-  <body style="background-color:teal; padding-bottom: 50px">
-    <nav class="navbar navbar-light justify-content-center" style="height: 150px; margin-bottom: -33px">
+  <body>
+    <nav class="navbar navbar-light p-3 justify-content-center">
       <span class="navbar-brand mb-0 h1">
-        <a href="/" style="text-decoration: none;">
-          <h1 class="text" style="font-size: 4vw;">
+        <a href="/">
+          <h1 class="text text-center header">
             <span style="color: #F6A023;font-size: larger;">Food </span>
             <span style="color: #1DE329;font-size: larger;">Producers </span>
             <span style="color: #00ccff;font-size: larger;">Forum</span>
@@ -28,22 +24,10 @@
         </a>
       </span>
     </nav>
-    <h1 style="
-                text-align: center;
-                color: white;
-                font-size: 3.5vw;
-                margin-bottom: 30px;
-            ">
+    <h1 class="text text-center text-white mb-3 signHead">
       Sign up here!
     </h1>
-    <div class="container" style="
-                background-color: #ffffffe7;
-                width: 65%;
-                padding-bottom: 20px;
-                padding-top: 20px;
-                box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.68);
-                border-radius: 5px;
-            ">
+    <div class="container bg-white shadow-sm py-3 p-4 rounded shadow-lg">
       <div class="row">
         <div class="col-md-12">
           <form class="form-horizontal" action="/auth/signup" method="POST">
@@ -51,6 +35,7 @@
             <div class="form-group col-md-12">
               <input type="email" class="form-control" placeholder="Enter email" name="email" required />
             </div>
+
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group col-md-12">
@@ -83,7 +68,7 @@
             <div class="row">
               <div class="col-md-9">
                 <div class="form-group col-md-12">
-                  <input type="text" class="form-control" placeholder="address" required />
+                  <input type="text" class="form-control" placeholder="address" name="address" required />
                 </div>
               </div>
               <div class="col-md-3">
@@ -96,7 +81,7 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group col-md-12">
-                  <input type="text" class="form-control" placeholder="cell phone" required />
+                  <input type="text" class="form-control" placeholder="cell phone" name="phone" required />
                 </div>
               </div>
               <div class="col-md-6">
@@ -107,11 +92,10 @@
             </div>
 
             <div class="row" style="margin-left: 0px; margin-bottom: 10px">
-              <div class="col-md-4">
-                <label>MY AGE IS:</label>
-              </div>
 
-              <div class="col-md-8">
+
+              <div class="col-md">
+                <label>MY AGE IS:</label>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
                       value="option1" required />
@@ -130,14 +114,19 @@
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4"
                       value="option3" required />
-                  <label class="form-check-label" for="inlineRadio3">40-59</label>
+                  <label class="form-check-label" for="inlineRadio4">40-59</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4"
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5"
                       value="option3" required />
-                  <label class="form-check-label" for="inlineRadio3">60 or older</label>
+                  <label class="form-check-label" for="inlineRadio5">60 or older</label>
                 </div>
               </div>
+            </div>
+
+            <div class="form-group col-md-12">
+              <label for="img">Your profile image: </label>
+              <input type="file" id="img" name="img" accept="image/*">
             </div>
 
             <div class="form-group col-md-12">
@@ -165,34 +154,32 @@
             </div>
 
             <div class="row" style="margin-left: 0px; margin-bottom: 10px">
-              <div class="col-md-4">
+              <div class="col-md">
                 <label>I HEARD ABOUT THIS FROM:</label>
-              </div>
-              <div class="col-md-8">
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio1"
-                      value="option1" required />
-                  <label class="form-check-label" for="inlineRadio1">Friends</label>
+                  <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadi1" value="option1"
+                      required />
+                  <label class="form-check-label" for="inlineRadi1">Friends</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio2"
-                      value="option2" required />
-                  <label class="form-check-label" for="inlineRadio2">Social Media</label>
+                  <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadi2" value="option2"
+                      required />
+                  <label class="form-check-label" for="inlineRadi2">Social Media</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio3"
-                      value="option3" required />
-                  <label class="form-check-label" for="inlineRadio3">email</label>
+                  <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadi3" value="option3"
+                      required />
+                  <label class="form-check-label" for="inlineRadi3">email</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio4"
-                      value="option3" required />
-                  <label class="form-check-label" for="inlineRadio3">Radio</label>
+                  <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadi4" value="option3"
+                      required />
+                  <label class="form-check-label" for="inlineRadi4">Radio</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadio4"
-                      value="option3" required />
-                  <label class="form-check-label" for="inlineRadio3">TV</label>
+                  <input class="form-check-input" type="radio" name="inlineRadioOption" id="inlineRadi5" value="option3"
+                      required />
+                  <label class="form-check-label" for="inlineRadi5">TV</label>
                 </div>
               </div>
             </div>
@@ -205,29 +192,33 @@
                     newsletters? [no spam!]</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                      value="option1" required />
-                  <label class="form-check-label" for="inlineRadio1">yes</label>
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRad1" value="option1"
+                      required />
+                  <label class="form-check-label" for="inlineRad1">yes</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                      value="option2" required />
-                  <label class="form-check-label" for="inlineRadio2">no</label>
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRad2" value="option2"
+                      required />
+                  <label class="form-check-label" for="inlineRad2">no</label>
                 </div>
               </div>
             </div>
 
-            <div class="row" style="margin-left: 15px; margin-top: 5px">
-              <p>
-                Membership is free. A donation of any size will
-                help us provide valuable information services
-                for food producers.
-              </p>
-            </div>
 
-            <button type="submit" class="btn btn-success btn-block" style="margin-bottom: 10px; margin-top: 10px">
+
+
+            <p class="text lastP mt-3">
+              Membership is free. A donation of any size will
+              help us provide valuable information services
+              for food producers.
+            </p>
+
+
+
+            <a href="https://donorbox.org/foodproducersforum" target="_blank" class="btn btn-success btn-block"
+                style="margin-bottom: 10px; margin-top: 10px">
               Donate
-            </button>
+            </a>
             <button type="submit" class="btn btn-primary btn-block">
               Submit Sign-up Form
             </button>

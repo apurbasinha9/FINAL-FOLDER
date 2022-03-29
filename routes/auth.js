@@ -10,8 +10,6 @@ router.post('/signup', authController.signup);
 
 router.post('/signin', authController.signin);
 
-router.post('/forumpost', postController.forumpost)
-
 router.get('/signout', authController.signout);
 
 

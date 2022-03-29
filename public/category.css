@@ -1,0 +1,141 @@
+body {
+    background-color: #E7E9EB;
+}
+
+.user-info {
+    background-color: #f4f7f8e7;
+}
+
+.user-info h5 {
+    margin-top: 11px !important;
+}
+
+#btn-back-to-top {
+    padding: 0;
+    position: fixed;
+    bottom: 130px;
+    right: 20px;
+    display: none;
+    z-index: 50;
+    height: 50px;
+    line-height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.scrollUp .fa-arrow-up {
+    padding: 0 !important;
+}
+
+.topContainer {
+    padding-top: 130px !important;
+    background-color: lightsteelblue;
+}
+
+.categoryCard {
+    background-color: #f2f897 !important;
+}
+
+.categoryCard h1 {
+    font-size: 2vw;
+}
+
+.middleContainer {
+    font-family: 'Courier New', monospace;
+
+}
+
+
+
+.middleContainer h1 {
+    font-size: 2.5vw !important;
+}
+
+.fa {
+    font-size: larger !important;
+}
+
+.secondContainer .linksA_tag1 {
+    font-size: 1.8vw;
+    font-weight: bolder;
+    text-decoration: underline;
+    color: red;
+}
+
+.secondContainer .linksA_tag2 {
+    font-size: 1.8vw;
+    font-weight: bolder;
+    text-decoration: underline;
+    color: rgb(33, 36, 199);
+}
+
+.secondContainer .linksA_tag3 {
+    font-size: 1.8vw;
+    font-weight: bolder;
+    text-decoration: underline;
+    color: #198754;
+}
+
+.comment-text {
+    font-weight: bold;
+}
+
+.commentBox .fa {
+    padding: 0 !important;
+}
+
+@media(max-width:768px) {
+    .postColumn {
+        margin-top: 10px;
+    }
+
+    .categoryCard {
+        margin-top: 100px;
+    }
+
+    .card-header {
+        font-size: 6vw !important;
+    }
+
+    .middleContainer h1 {
+        font-size: 5vw !important;
+    }
+
+    .linksA_tag1 {
+        font-size: 4vw !important;
+    }
+
+    .linksA_tag2 {
+        font-size: 4vw !important;
+    }
+
+    .linksA_tag3 {
+        font-size: 4vw !important;
+    }
+
+    .postButton {
+        background-color: #04AA6D;
+        font-size: 5vw;
+    }
+
+    .userName {
+        font-size: 6vw !important;
+    }
+
+    .links {
+        text-align: center;
+    }
+
+    .links h2 {
+        font-size: 7vw;
+    }
+
+    .form-group h4 {
+        text-align: center !important;
+    }
+
+    #btn-back-to-top {
+        bottom: 280px;
+        right: 5px;
+    }
+}

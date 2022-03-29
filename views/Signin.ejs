@@ -8,62 +8,61 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="signin.css">
+
   </head>
 
-  <style>
-    input:hover {
-      border-color: blue;
-    }
-  </style>
 
-  <body style="background-color: #e64816">
-    <h1 style="
-                text-align: center;
-                color: white;
-                font-size: 70px;
-                margin-top: 40px;
-            ">
+
+  <body>
+    <nav class="navbar navbar-light justify-content-center" style="height: 150px; margin-bottom: -33px">
+      <span class="navbar-brand mb-0 h1">
+        <a href="/" style="text-decoration: none;">
+          <h1 class="text" style="font-size: 4vw;">
+            <span style="color: #F6A023;font-size: larger;">Food </span>
+            <span style="color: #1DE329;font-size: larger;">Producers </span>
+            <span style="color: #00ccff;font-size: larger;">Forum</span>
+          </h1>
+        </a>
+      </span>
+    </nav>
+    <h1>
       Sign in!
     </h1>
-    <div class="container" style="
-                background-color: lavender;
-                margin-top: 5%;
-                width: 50%;
-                padding-bottom: 20px;
-                padding-top: 20px;
-                border-radius: 4px;
-                box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.68);
-                      ">
-      <form action="/auth/signin" method="POST">
-        <div class="form-group col-md-12">
-          <label for="email">Email address</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" />
-        </div>
-        <div class="form-group col-md-12">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" id="password" placeholder="Password" name="password" />
-        </div>
-        <div class="form-group form-check col-md-12" style="margin-left: 15px">
-          <label class="form-check-label" for="exampleCheck1" style="font-weight: normal">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1" required />
-            By signing in, you agree to respect basic online
-            standards for participation: we encourage lively
-            discussion and disagreement but no hate speech or
-            disrespectful language addressed to people or their
-            ideas will be allowed; no marketing or sale of any item
-            or service; inclusive and appropriate language will be
-            used, since people of all ages, backgrounds and skill
-            levels are participating. We reserve the right to remove
-            or edit any post if in our judgement it is not accurate
-            or helpful to the discussion in progress.</label>
-        </div>
-        <button type="submit" class="btn btn-primary col-md-12">
-          Sign in
-        </button>
-        <a href="/" class="btn btn-primary col-md-12" style="margin-top: 5px">
-          Go Back
-        </a>
-      </form>
+    <div class="container p-3 d-flex justify-content-center">
+      <div class="col-md-7 border rounded shadow-lg bg-white p-3">
+
+        <form action="/auth/signin" method="POST">
+          <div class="form-group col-md-12">
+            <label for="email" class="email">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" />
+          </div>
+          <div class="form-group col-md-12">
+            <label for="password" class="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password" name="password" />
+          </div>
+          <div class="form-group form-check col-md-12" style="margin-left: 15px">
+            <label class="form-check-label" for="exampleCheck1" style="font-weight: normal">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" required />
+              By signing in, you agree to respect basic online
+              standards for participation: we encourage lively
+              discussion and disagreement but no hate speech or
+              disrespectful language addressed to people or their
+              ideas will be allowed; no marketing or sale of any item
+              or service; inclusive and appropriate language will be
+              used, since people of all ages, backgrounds and skill
+              levels are participating. We reserve the right to remove
+              or edit any post if in our judgement it is not accurate
+              or helpful to the discussion in progress.</label>
+          </div>
+          <button type="submit" class="btn btn-primary col-md-12">
+            Sign in
+          </button>
+          <a href="/" class="btn btn-primary col-md-12" style="margin-top: 5px">
+            Go Back
+          </a>
+        </form>
+      </div>
       <% if(message !='' ){ %>
         <% if(message==='user registered' ){ %>
           <div class="alert alert-success">
