@@ -38,6 +38,8 @@
                         <img src="<%= category.image %>" class="img-fluid shadow rounded mx-auto d-block w-80 h-80"
                             alt="Responsive image">
 
+
+
                     </div>
 
                     <div class="col-md-3 p-3 my-auto">
@@ -63,7 +65,7 @@
 
 
             <div class="container-fluid p-3 bg-secondary middleContainer">
-                <h1 class="text text-center text-white p-1">Write your topic and thoughts below
+                <h1 class="text text-center text-white p-1">Select your topic and post your thoughts below
                     <i class="fa fa-solid fa-arrow-down"></i>
                 </h1>
             </div>
@@ -112,19 +114,30 @@
 
 
                         <form action="/categories/<%= category.id %>/forumpost" method="post">
+
                             <div class="card shadow-sm rounded p-3">
 
                                 <div class="card-body">
                                     <div class="row dropdown p-1 mb-2">
-                                        <button class="btn btn-success dropdown-toggle btn-block" type="button"
+                                        <!-- <button class="btn btn-success dropdown-toggle btn-block" type="button"
                                             id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                             Select the topic of your post
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                            <li><a class="dropdown-item" href="#">need to be added</a></li>
-                                            <li><a class="dropdown-item" href="#">need to be added</a></li>
-                                            <li><a class="dropdown-item" href="#">need to be added</a></li>
-                                        </ul>
+                                        </button> -->
+
+
+
+                                        <select class="form-select btn btn-success" name="subCategory">
+                                            <option selected disabled>Select your topic</option>
+                                            <% for(var i=0; i < subCat.length; i++){ %>
+                                                <option value="<%= subCat[i].id %>">
+                                                    <%= subCat[i].title %>
+                                                </option>
+                                                <%}%>
+                                        </select>
+
+
+
+
                                     </div>
                                     <div class="form-group">
                                         <div class="row d-flex justify-content-center">
@@ -141,7 +154,7 @@
                                     </div>
                                 </div>
 
-                                <div class="d-grid gap-2 col-8 mx-auto mb-3">
+                                <div class="d-grid gap-2mx-auto mb-3">
                                     <button class="btn btn-primary p-2 postButton" type="submit">Post</button>
                                 </div>
 
@@ -166,10 +179,13 @@
                                             </h5>
                                         </div>
                                         <div class=" m-2">
+                                            <h4 class="catTopic">
+                                                <%=posts[i].subCat%>
+                                            </h4>
                                             <span class="date text-black-50">
-                                                <h4>
+                                                <h5>
                                                     <%=posts[i].title%>
-                                                </h4>
+                                                </h5>
 
                                             </span>
                                             <p class=" comment-text">
@@ -183,7 +199,8 @@
                                                 <button href="" class="btn p-1 ms-2"><i
                                                         class="fa fa-commenting-o"></i></button>
                                                 <button href="" class="btn p-1 ms-2"><i class="fa fa-edit"></i></button>
-
+                                                <a type="submit" href="/delete/<%= posts[i].id %>"
+                                                    class="btn p-1 ms-2"><i class="fa fa-trash"></i></a>
                                             </div>
                                         </div>
                                     </div>

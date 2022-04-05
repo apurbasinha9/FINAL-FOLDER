@@ -61,12 +61,13 @@ router.get('/categories/:id', middleware, (req, res) => {
                 console.log("no results")
             }
 
-
-            db.query(`SELECT forumposts.*, user.first_name, user.last_name, user.userImage 
+            db.query(`SELECT forumposts.*, user.first_name, user.last_name, user.userImage, subCategory.title as subCat 
             FROM forumposts
             JOIN user
             ON forumposts.user_id = user.id
-            WHERE category_id = ?`, [req.params.id], async (err, post_results) => {
+            LEFT JOIN subCategory
+            ON subCategory.id = forumposts.subcategory_id
+            WHERE forumposts.category_id = ?`, [req.params.id], async (err, post_results) => {
 
                 if (err) {
                     console.log(err);
@@ -76,16 +77,20 @@ router.get('/categories/:id', middleware, (req, res) => {
                 }
 
                 console.log(post_results)
+                db.query('SELECT * FROM subCategory WHERE category_id = ?', [req.params.id], (err, reslt) => {
+                    console.log(reslt);
+                    res.render('category_view', {
+                        category: category_result[0],
+                        posts: post_results,
+                        subCat: reslt
+                    });
 
-                res.render('category_view', {
-                    category: category_result[0],
-                    posts: post_results,
-                });
+                })
+
 
             })
 
 
-            // console.log(results);
         })
 
     } else {
@@ -93,6 +98,44 @@ router.get('/categories/:id', middleware, (req, res) => {
     }
 
 })
+
+
+router.get("/delete/:id", middleware, (req, res) => {
+
+
+    db.query('SELECT category_id from forumposts where id = ?', [req.params.id], (err, result) => {
+        if (err) throw err;
+        var catID = result[0].category_id;
+
+        let sql = `DELETE FROM forumposts WHERE id = ${req.params.id}`;
+        console.log(req.params.id);
+        db.query(sql, (err, rows) => {
+
+            if (err) {
+                throw err;
+            }
+
+            res.redirect('/categories/' + catID)
+
+        });
+    })
+
+
+
+});
+
+// router.get('/categories/:id/delete/:id', function (req, res) {
+
+//     db.query('DELETE FROM forumposts WHERE id = ?', [req.body.id], function (err, result) {
+//         //if(err) throw err
+//         if (!err) {
+//             res.redirect('/categories/:id')
+//         } else {
+//             console.log(err);
+//         }
+//         console.log(result);
+//     })
+// })
 
 
 
