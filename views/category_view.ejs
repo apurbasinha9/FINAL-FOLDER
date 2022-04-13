@@ -79,29 +79,15 @@
                             <div class="card-body links">
                                 <h2 class="card-title text-primary">Links</h2>
 
-                                <a href="https://www.seeds.ca" class="linksA_tag1">
-                                    Seeds of Diversity</a>
-                                <p class="card-text">
-                                    Membership is free and gives
-                                    you access to
-                                    seeds being
-                                    grown
-                                    by fellow Canadian gardeners and growers.
-                                </p>
+                                <% for(var i=0; i < subCat.length; i++){ %>
+                                    <a href="https://<%= subCat[i].link %>" target="_blank" class="linksA_tag1">
+                                        <%= subCat[i].linkTitle %>
+                                    </a>
+                                    <p class="card-text">
+                                        <%= subCat[i].linkDesc %>
+                                    </p>
+                                    <%}%>
 
-                                <a href="https://www.foodproducersforum.com/seeds" class="linksA_tag2 mt-3">
-                                    Our Seeds Page</a>
-                                <p class="card-text">
-                                    The SEEDS page on our website has a collection of interesting and useful posts about
-                                    seeds.
-                                </p>
-
-                                <a href="https://foodproducersforum.com/seeds/seed-starting/" class="linksA_tag3 mt-3">
-                                    Seed Starting Workshop</a>
-                                <p class="card-text">
-                                    In this online video, our mentor offers his experience and advice on how he starts
-                                    seeds each spring.
-                                </p>
 
                             </div>
                         </div>

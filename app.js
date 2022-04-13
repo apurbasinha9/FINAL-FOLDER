@@ -42,3 +42,22 @@ app.use('/auth', require('./routes/auth'));
 app.listen(port, () => {
     console.log("server is running");
 })
+
+
+
+// DATABASE = foodproducerforum-member
+// DATABASE_HOST = localhost
+// DATABASE_USER = root
+// DATABASE_PASSWORD = cAnada2018@
+// JWT_SECRET = mysupersecretpassword
+// JWT_EXPIRES_IN = 90d
+// JWT_COOKIE_EXPIRES = 90
+
+
+// DATABASE = foodpro6_foodproducerforum-member
+// DATABASE_HOST = localhost
+// DATABASE_USER = foodpro6_members
+// DATABASE_PASSWORD = cAnada2018@
+// JWT_SECRET = mysupersecretpassword
+// JWT_EXPIRES_IN = 90d
+// JWT_COOKIE_EXPIRES = 90
